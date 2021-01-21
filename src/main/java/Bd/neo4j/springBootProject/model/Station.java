@@ -20,7 +20,7 @@ public class Station {
 	private Station stationSuivante;
 	
 	@Relationship(type= "arrive_a", direction= Relationship.INCOMING)
-	private Transport transport;
+	private MoyenTransport transport;
 	
 	public Station getStationPrecedente() {
 		return stationPrecedente;

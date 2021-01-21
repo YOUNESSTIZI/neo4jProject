@@ -13,4 +13,6 @@ public interface StationService {
 	public Station getStationById(long id) throws NotFoundException;
 	
 	public Boolean deleteStationById(long id);
+
+	public Iterable<Station> getTransitStations(String station1, String station2);
 }

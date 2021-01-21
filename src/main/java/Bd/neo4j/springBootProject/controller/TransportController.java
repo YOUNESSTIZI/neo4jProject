@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import Bd.neo4j.springBootProject.model.Transport;
+import Bd.neo4j.springBootProject.model.MoyenTransport;
 import Bd.neo4j.springBootProject.service.TransportService;
 
 @Controller
@@ -24,9 +24,9 @@ public class TransportController {
 	
 	
 	@GetMapping()
-	public ResponseEntity<Iterable<Transport>> getTransports() {
+	public ResponseEntity<Iterable<MoyenTransport>> getTransports() {
 		
-		Iterable<Transport> transports =  this.transportService.getTransports();
+		Iterable<MoyenTransport> transports =  this.transportService.getTransports();
 			
 		return ResponseEntity.status(HttpStatus.OK).body(transports);
 		
@@ -34,12 +34,12 @@ public class TransportController {
 	}	
 	
 	@PostMapping()
-	public ResponseEntity<Transport> addTransport(@ModelAttribute Transport transport){
+	public ResponseEntity<MoyenTransport> addTransport(@ModelAttribute MoyenTransport transport){
 		
 		
 		
 			
-		Transport createdTransport = this.transportService.addTransport(transport);
+		MoyenTransport createdTransport = this.transportService.addTransport(transport);
 			
 		return ResponseEntity.status(HttpStatus.CREATED).body(createdTransport);
 			
@@ -47,7 +47,7 @@ public class TransportController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Transport> deleteTransport(@PathVariable long id ){
+	public ResponseEntity<MoyenTransport> deleteTransport(@PathVariable long id ){
 		
 		
 			

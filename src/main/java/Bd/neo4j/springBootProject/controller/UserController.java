@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import Bd.neo4j.springBootProject.model.User;
+import Bd.neo4j.springBootProject.model.Usager;
 import Bd.neo4j.springBootProject.service.UserService;
 
 @Controller
@@ -25,8 +25,8 @@ public class UserController {
 	
 	
 	@GetMapping()
-	public ResponseEntity<Iterable<User>> getUsers() {
-		Iterable<User> users ;
+	public ResponseEntity<Iterable<Usager>> getUsers() {
+		Iterable<Usager> users ;
 		
 		
 			
@@ -41,12 +41,12 @@ public class UserController {
 	
 	
 	@PostMapping()
-	public ResponseEntity<User> addUser(@ModelAttribute User user){
+	public ResponseEntity<Usager> addUser(@ModelAttribute Usager user){
 		
 		
 		
 			
-			User createdUser = this.userService.addUser(user);
+		Usager createdUser = this.userService.addUser(user);
 			
 			return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
 			
@@ -55,7 +55,7 @@ public class UserController {
 
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<User> deleteUser(@PathVariable long id ){
+	public ResponseEntity<Usager> deleteUser(@PathVariable long id ){
 		
 		
 			
@@ -67,6 +67,8 @@ public class UserController {
 		
 	}
 
+	
+	
 
 
 }

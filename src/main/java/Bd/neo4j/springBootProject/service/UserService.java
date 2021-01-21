@@ -1,15 +1,12 @@
 package Bd.neo4j.springBootProject.service;
 
-
-
-
-import Bd.neo4j.springBootProject.model.User;
+import Bd.neo4j.springBootProject.model.Usager;
 
 public interface UserService {
 
-	public Iterable<User> getUsers();
+	public Iterable<Usager> getUsers();
 
-	public User addUser(User user);
+	public Usager addUser(Usager user);
 	
 	public Boolean deleteUser(Long id) ;
 	

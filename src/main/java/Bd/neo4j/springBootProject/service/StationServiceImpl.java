@@ -58,4 +58,13 @@ public class StationServiceImpl implements StationService {
 		return true;
 	}
 
+
+	@Override
+	public Iterable<Station> getTransitStations(String station1, String station2) {
+		
+		Iterable<Station> stations = this.stationRepository.getTransitStation(station1, station2);
+		
+		return stations;
+	}
+
 }

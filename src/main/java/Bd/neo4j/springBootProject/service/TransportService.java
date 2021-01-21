@@ -2,16 +2,15 @@ package Bd.neo4j.springBootProject.service;
 
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 
-import Bd.neo4j.springBootProject.model.Station;
-import Bd.neo4j.springBootProject.model.Transport;
+import Bd.neo4j.springBootProject.model.MoyenTransport;
 
 public interface TransportService {
 	
-	public Transport addTransport(Transport transport);
+	public MoyenTransport addTransport(MoyenTransport transport);
 	
-	public Iterable<Transport> getTransports();
+	public Iterable<MoyenTransport> getTransports();
 	
-	public Transport getTransportById(long id) throws NotFoundException;
+	public MoyenTransport getTransportById(long id) throws NotFoundException;
 	
 	public Boolean deleteTransportById(long id);
 }

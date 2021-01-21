@@ -14,7 +14,11 @@ public interface StationRepository extends Neo4jRepository<Station, Long>{
 	public Iterable<Station> getAllStations();
 
 	
-
+	
+	@Query("MATCH (m:Station {name: $stationDepart }),(g:Station{name: $stationArrive})," + 
+			"path = (m)-[suit*]->(g)" + 
+			"RETURN nodes(path);")
+	public Iterable<Station> getTransitStation(String stationDepart, String stationArrive);
 
 
 }

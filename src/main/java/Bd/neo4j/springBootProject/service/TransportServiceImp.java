@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.stereotype.Service;
 
-import Bd.neo4j.springBootProject.model.Transport;
+import Bd.neo4j.springBootProject.model.MoyenTransport;
 import Bd.neo4j.springBootProject.repository.TransportRepository;
 
 @Service
@@ -17,25 +17,25 @@ public class TransportServiceImp implements TransportService {
 	
 	
 	@Override
-	public Transport addTransport(Transport transport) {
+	public MoyenTransport addTransport(MoyenTransport transport) {
 		
-		Transport createdTransport = this.transportRepository.save(transport);
+		MoyenTransport createdTransport = this.transportRepository.save(transport);
 		
 		return createdTransport;
 	}
 
 	@Override
-	public Iterable<Transport> getTransports() {
+	public Iterable<MoyenTransport> getTransports() {
 
-		Iterable<Transport> transports = this.transportRepository.getAllTransports();
+		Iterable<MoyenTransport> transports = this.transportRepository.getAllTransports();
 		
 		return transports;
 	}
 
 	@Override
-	public Transport getTransportById(long id) throws NotFoundException {
+	public MoyenTransport getTransportById(long id) throws NotFoundException {
 
-		Optional<Transport> transport = this.transportRepository.findById(id);
+		Optional<MoyenTransport> transport = this.transportRepository.findById(id);
 		
 		if(transport.isPresent()) {
 			return transport.get();

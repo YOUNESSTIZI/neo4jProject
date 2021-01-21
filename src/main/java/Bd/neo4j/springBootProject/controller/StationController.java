@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import Bd.neo4j.springBootProject.model.Station;
+import Bd.neo4j.springBootProject.model.TransitStationsModel;
 import Bd.neo4j.springBootProject.service.StationService;
 
 
@@ -53,9 +54,20 @@ public class StationController {
 			
 			return ResponseEntity.status(HttpStatus.OK).body(null);
 			
-		
-		
+				
 	}
+	
+	@PostMapping("/transit")
+	public ResponseEntity<Iterable<Station>> getTransitStations(@ModelAttribute TransitStationsModel transit){
+		
+		
+		
+		Iterable<Station> stations =this.stationService.getTransitStations(transit.getStation1(),transit.getStation2());
+		
+		return ResponseEntity.status(HttpStatus.OK).body(stations);
+		
+			
+}
 
 
 

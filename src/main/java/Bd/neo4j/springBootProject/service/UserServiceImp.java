@@ -4,7 +4,7 @@ package Bd.neo4j.springBootProject.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import Bd.neo4j.springBootProject.model.User;
+import Bd.neo4j.springBootProject.model.Usager;
 import Bd.neo4j.springBootProject.repository.UserRepository;
 
 @Service
@@ -14,17 +14,17 @@ public class UserServiceImp implements UserService {
 	private UserRepository userRepository;
 
 	@Override
-	public Iterable<User> getUsers(){
+	public Iterable<Usager> getUsers(){
 		
-		Iterable<User> users = this.userRepository.getAllUsers();
+		Iterable<Usager> users = this.userRepository.getAllUsers();
 		
 		return users;
 	}
 
 	@Override
-	public User addUser(User user) {
+	public Usager addUser(Usager user) {
 
-		User savedUser = this.userRepository.save(user);
+		Usager savedUser = this.userRepository.save(user);
 		
 		return savedUser;
 	}

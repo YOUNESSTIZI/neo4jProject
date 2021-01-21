@@ -5,13 +5,13 @@ import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.stereotype.Repository;
 
-import Bd.neo4j.springBootProject.model.Transport;
+import Bd.neo4j.springBootProject.model.MoyenTransport;
 
 @Repository
-public interface TransportRepository extends Neo4jRepository<Transport, Long>{
+public interface TransportRepository extends Neo4jRepository<MoyenTransport, Long>{
 
-	@Query("Match (u:Transport) return u; ")
-	public Iterable<Transport> getAllTransports();
+	@Query("Match (u:MoyenTransport) return u; ")
+	public Iterable<MoyenTransport> getAllTransports();
 
 	
 

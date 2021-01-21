@@ -8,7 +8,7 @@ import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
 @NodeEntity
-public class Transport {
+public class MoyenTransport {
 	
 	@Id @GeneratedValue private Long id;
 	
@@ -16,7 +16,7 @@ public class Transport {
 	
 	private long numero;
 	
-	private String Information;
+	private String information;
 	
 	
 
@@ -24,11 +24,11 @@ public class Transport {
 	private List<Station> stations;
 	
 	@Relationship(type= "utilise", direction= Relationship.INCOMING)
-	private List<User> users;
+	private List<Usager> users;
 	
 	
 
-	public Transport() {
+	public MoyenTransport() {
 		super();
 	}
 
@@ -36,7 +36,7 @@ public class Transport {
 		return stations;
 	}
 
-	public List<User> getUsers() {
+	public List<Usager> getUsers() {
 		return users;
 	}
 
@@ -65,11 +65,11 @@ public class Transport {
 	}
 
 	public String getInformation() {
-		return Information;
+		return information;
 	}
 
 	public void setInformation(String information) {
-		Information = information;
+		this.information = information;
 	}
 	
 	
