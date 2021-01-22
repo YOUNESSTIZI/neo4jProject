@@ -19,7 +19,7 @@ public interface UserRepository extends Neo4jRepository<Usager, Long>{
 
 	
 	@Query("MATCH (a:Usager),(b:MoyenTransport) Where "
-			+ "a.name = $userName AND b.name = $transportName "
+			+ "a.id = $userName AND b.name = $transportName "
 			+ " CREATE (a) -[r:utilise {preference: $degreePreference }]->(b) RETURN r.preference;" )
 	public long addRelation(
 			 String userName, 
